@@ -1,3 +1,4 @@
+# Terraform Block
 terraform {
 
     required_version = ">= 1.0.0"
@@ -12,9 +13,17 @@ terraform {
         version = "~> 3.0"
         }
     }
-    
-    provider_meta  "aws"{
-      region = "ap-southeast-2"
-      profile = "default"
-    }
+
 }
+
+# Provider Block
+provider "aws" {
+    region = "ap-southeast-2"
+    profile = "default"
+}
+
+/*
+Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
+$HOME/.aws/credentials
+*/
+
