@@ -1,0 +1,14 @@
+terraform show
+
+terraform refresh
+
+terraform  state list
+
+terraform state show aws_security_group.vpc_web_sg
+
+terraform state mv --dry-run  aws_security_group.vpc_web_sg  aws_security_group.vpc_web_sg_new
+
+
+terraform taint
+
+terraform untaint
