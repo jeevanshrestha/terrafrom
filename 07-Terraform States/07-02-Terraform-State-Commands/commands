@@ -9,6 +9,9 @@ terraform state show aws_security_group.vpc_web_sg
 terraform state mv --dry-run  aws_security_group.vpc_web_sg  aws_security_group.vpc_web_sg_new
 
 
-terraform taint
+terraform taint 'module.ec2_cluster["one"].aws_instance.this[0]'
 
-terraform untaint
+terraform untaint 'module.ec2_cluster["one"].aws_instance.this[0]'
+
+# only to download the modules
+terraform get 
