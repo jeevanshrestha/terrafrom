@@ -15,3 +15,5 @@ terraform untaint 'module.ec2_cluster["one"].aws_instance.this[0]'
 
 # only to download the modules
 terraform get 
+
+terraform output

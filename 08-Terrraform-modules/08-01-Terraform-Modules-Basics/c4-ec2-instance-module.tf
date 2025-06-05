@@ -14,11 +14,11 @@ module "ec2_cluster" {
   ami                    = data.aws_ami.amzlinux.id 
   instance_type          =  var.instance_type
   key_name               = var.instance_keypair
-  monitoring             = true
+
   vpc_security_group_ids = ["sg-03bd0e64aecb8cd16"] # Get Default VPC Security Group ID and replace
   subnet_id              = "subnet-0924073ad254813a0" # Get one public subnet id from default vpc and replace
   user_data              = file("apache-install.sh") 
-
+  monitoring             = true
 
   tags = {
     Name        = "Modules-Demo-${each.key}"
