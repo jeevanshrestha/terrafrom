@@ -27,6 +27,8 @@ variable "instance_keypair" {
   default     = "Terraform-Key" # Replace with your key pair name for SSH access
 }
 
+ 
+
 #AWS EC2 Instance Type List
 variable "instance_type_list" {
   description = "List of instance types to create"

@@ -37,8 +37,25 @@ output "azs" {
 }
 
 
+
 # Output ALB DNS Name
 output "alb_dns_name" {
   description = "Public DNS name of the ALB"
   value       = aws_lb.jeeves_alb.dns_name
+}
+
+output "jumpbox_public_ip" {
+  value = aws_eip.jumpbox_eip.public_ip
+}
+
+# Output web server instances private IPs
+output "web_server_private_ips" {
+  description = "List of private IPs of web server instances" 
+  value       = { for k, instance in module.web : k => instance.private_ip }
+}
+
+# Output DB server private IP
+output "db_server_private_ip" {
+  description = "Private IP of the database server instance"
+  value       = module.db.private_ip
 }
